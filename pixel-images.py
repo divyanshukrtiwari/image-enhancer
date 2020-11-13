@@ -21,13 +21,10 @@ sr.setModel(modelName, modelScale)
 
 image = cv2.imread(args["image"])
 print("[INFO] w: {}, h: {}".format(image.shape[1], image.shape[0]))
-# use the super resolution model to upscale the image, timing how
-# long it takes
 start = time.time()
 upscaled = sr.upsample(image)
 end = time.time()
 print("[INFO] super resolution took {:.6f} seconds".format(end - start))
-# show the spatial dimensions of the super resolution image
 print("[INFO] w: {}, h: {}".format(upscaled.shape[1],upscaled.shape[0]))
 
 cv2.imshow("Original", image)
